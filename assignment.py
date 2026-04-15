@@ -18,8 +18,8 @@ print(f"Edge cases:\n {distmore[['step','distance']]}")
 distmore.to_json("filtered_walk.json", orient="records", indent=3)
 
 plt.plot(df["x"], df["y"], color="blue", label="y(x)")
-first_last=df[(df["step"]==1) and (df["step"]==300)]
-plt.plot(first_last['x'],first_['y'], color="red", marker="o", linestyle="none",label="first/last step")
+first_last=df[(df["step"]==1) | (df["step"]==300)]
+plt.plot(first_last['x'],first_last['y'], color="red", marker="o", linestyle="none",label="first/last step")
 
 plt.xlabel("x")
 plt.ylabel("y")

@@ -14,5 +14,14 @@ print(f"average={average}, max={mx}, min={mn}")
 distmore=df[df['distance']>average]
 print(f"Edge cases:\n {distmore[['step','distance']]}")
 
-with open('filtered_walk.json', 'w') as f_w:
-    distmore.to_json("filtered_walk.json", orient="records", indent=3)
+# with open('filtered_walk.json', 'w') as f_w:
+distmore.to_json("filtered_walk.json", orient="records", indent=3)
+
+plt.plot(df["x"], df["y"], color="blue", label="y(x)")
+first_last=df[(df["step"]==1) and (df["step"]==300)]
+plt.plot(first_last['x'],first_['y'], color="red", marker="o", linestyle="none",label="first/last step")
+
+plt.xlabel("x")
+plt.ylabel("y")
+plt.legend()
+plt.show()

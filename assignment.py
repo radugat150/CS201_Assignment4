@@ -9,3 +9,7 @@ df["distance"]=np.linalg.norm(df[["x", "y"]], axis=1)
 average=df["distance"].mean()
 mx=df["distance"].max()
 mn=df["distance"].min()
+
+print(f"average={average}, max={mx}, min={mn}")
+distmore=df[df['distance']>average]
+print(f"Edge cases:\n {distmore[['step','distance']]}")

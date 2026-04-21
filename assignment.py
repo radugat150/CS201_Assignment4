@@ -12,7 +12,7 @@ mn=df["distance"].min()
 
 print(f"average={average}, max={mx}, min={mn}")
 distmore=df[df['distance']>average]
-print(f"Edge cases:\n {distmore[['step','distance']]}")
+print(f"Distance more than average:\n {distmore[['step','distance']]}")
 
 # with open('filtered_walk.json', 'w') as f_w:
 distmore.to_json("filtered_walk.json", orient="records", indent=3)
